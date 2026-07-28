@@ -113,7 +113,7 @@
 <li><a class="reference internal" href="#the-5v-supply-rail">The 5V supply rail</a></li>
 <li><a class="reference internal" href="#two-options-for-the-3-3v-supply-rail">Two options for the +3.3V supply rail</a><ul>
 <li><a class="reference internal" href="#arduino-3-3v-rail">Arduino +3.3V rail</a></li>
-<li><a class="reference internal" href="#the-on-board-3-3v-ldo-adm7150ardz-3-3">The on-board 3.3V LDO (ADM7150ARDZ-3.3)</a></li>
+<li><a class="reference internal" href="#the-onboard-3-3v-ldo-adm7150ardz-3-3">The onboard 3.3V LDO (ADM7150ARDZ-3.3)</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#the-12v-symmetrical-supply-rails">The ±12V symmetrical supply rails</a></li>
@@ -138,8 +138,8 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#signal-and-pwm-clk-generator">Signal and PWM/CLK generator</a><ul>
-<li><a class="reference internal" href="#on-board-signal-generator">On-board signal generator</a></li>
-<li><a class="reference internal" href="#on-board-signal-generator-s-dc-offset">On-board signal generator’s DC offset</a></li>
+<li><a class="reference internal" href="#onboard-signal-generator">Onboard signal generator</a></li>
+<li><a class="reference internal" href="#onboard-signal-generator-s-dc-offset">Onboard signal generator’s DC offset</a></li>
 <li><a class="reference internal" href="#pwm-clk-generator">PWM/CLK generator</a></li>
 </ul>
 </li>
@@ -261,11 +261,11 @@ product documentation.</p>
 </section>
 <section id="hardware-setup">
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
-<p>This section presents detailed instructions on setting up the AD-M2KCOMPEDU-EBZ.</p>
+<p>This section presents detailed instructions on setting up the <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a>.</p>
 <section id="accessible-headers-and-connectors">
 <h3>Accessible Headers and Connectors<a class="headerlink" href="#accessible-headers-and-connectors" title="Link to this heading"></a></h3>
 <p>There are a variety of on-board connectors that enable direct access to all
-features of the AD-M2KCOMPEDU-EBZ, thus minimizing the complexity of interconnection
+features of the <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a>, thus minimizing the complexity of interconnection
 with external devices such as Arduino, <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a>, Analog Discovery
 eries, and external M5STACK Display.</p>
 <section id="arduino">
@@ -302,7 +302,7 @@ without interfering, enabling “live programming”.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Although the user has access to all Arduino terminals, please note that some
-of them are already connected to the AD-M2KCOMPEDU-EBZ on-board devices, so they
+of them are already connected to the <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> onboard devices, so they
 should not be used otherwise.</p>
 </div>
 <p>For instance, the SPI port is already connected to the <a class="icon adi reference external" href="https://www.analog.com/AD9833" target="_blank">AD9833</a> signal
@@ -318,7 +318,7 @@ do not conflict with the existing ones (0x3C for the display and 0x1E for <a cla
 <p><span class="caption-number">Figure 3 </span><span class="caption-text">Arduino Top Headers for End User</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>The list of Arduino ports already used and/or reserved by the AD-M2KCOMPEDU-EBZ
+<p>The list of Arduino ports already used and/or reserved by the <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a>
 functionality is presented in the table below:</p>
 <div class="table-wrapper docutils container" id="id5">
 <table class="docutils align-default" id="id5">
@@ -421,38 +421,40 @@ connected to 7-segment LED F cathode when jumper is used.</p></td>
 </table>
 </div>
 <p>The remaining Arduino pins are either available or conditionally available to the
-end user, depending on the selected AD-M2KCOMPEDU-EBZ functions.</p>
+end user, depending on the selected <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> functions.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Arduino reserved pins/ports have double functionality that serves the AD-M2KCOMPEDU-EBZ
+<p>Arduino reserved pins/ports have double functionality that serves the <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a>
 in the following use cases:</p>
-<ul class="simple">
+<ul>
 <li><p><strong>Sig Gen Control:</strong> Priority 1. All Sig Gen controls are directly connected
 to the Arduino header; no jumpers are required.</p></li>
 <li><p><strong>CAN RX/TX config:</strong> Priority 2, all CAN RX/TX pins can be connected to
-Arduino header via dedicated Jumpers P21, P22—see Figure 4.</p></li>
-<li><p><strong>7 Segments LED display control:</strong> Priority 2, all LED cathodes can be
-connected to Arduino header via dedicated Jumpers P23, P31—see Figure 5.</p></li>
-</ul>
-</div>
-<p>Thus, only one use-case is recommended to be used at a time to avoid inputs/outputs
-overdrive.</p>
+Arduino header via dedicated Jumpers P21, P22.</p>
 <figure class="align-center" id="id6">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/CAN-to-Arduino-connection-Jumpers-P21-P22.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/CAN-to-Arduino-connection-Jumpers-P21-P22.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/CAN-to-Arduino-connection-Jumpers-P21-P22.png" style="width: 600px;" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/CAN-to-Arduino-connection-Jumpers-P21-P22.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/CAN-to-Arduino-connection-Jumpers-P21-P22.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/CAN-to-Arduino-connection-Jumpers-P21-P22.png" style="width: 400px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 4 </span><span class="caption-text">CAN to Arduino Connection Jumpers P21 and P22</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+</li>
+<li><p><strong>7 Segments LED display control:</strong> Priority 2, all LED cathodes can be
+connected to Arduino header via dedicated Jumpers P23, P31.</p>
 <figure class="align-center" id="id7">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/7seg_cathodes_arduino_jumpers_p23_p31.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/7seg_cathodes_arduino_jumpers_p23_p31.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/7seg_cathodes_arduino_jumpers_p23_p31.png" style="height: 500px;" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/7seg_cathodes_arduino_jumpers_p23_p31.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/7seg_cathodes_arduino_jumpers_p23_p31.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/7seg_cathodes_arduino_jumpers_p23_p31.png" style="height: 400px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 5 </span><span class="caption-text">7-Segment Display Cathodes to Arduino Connection Jumpers P23-P31</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+</li>
+</ul>
+</div>
+<p>Thus, only one use-case is recommended to be used at a time to avoid inputs/outputs
+overdrive.</p>
 <p>The Arduino pins not listed as already connected or reserved may still be conditionally
-assigned to optional AD-M2KCOMPEDU-EBZ functions, such as CAN or the 7-segment display.
+assigned to optional <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> functions, such as CAN or the 7-segment display.
 The table below lists the Arduino header pins that are available or conditionally
 available to the end user.</p>
 <div class="table-wrapper docutils container" id="id8">
@@ -498,12 +500,12 @@ available to the end user.</p>
 <tr class="row-even"><td><p>IOREF</p></td>
 <td><p>P2</p></td>
 <td><p>2</p></td>
-<td><p>Arduino IO reference pin; not used by AD-M2KCOMPEDU-EBZ circuitry.</p></td>
+<td><p>Arduino IO reference pin; not used by <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> circuitry.</p></td>
 </tr>
 <tr class="row-odd"><td><p>RESET</p></td>
 <td><p>P2</p></td>
 <td><p>3</p></td>
-<td><p>Arduino RESET pin; not used by AD-M2KCOMPEDU-EBZ circuitry. Not a GPIO</p></td>
+<td><p>Arduino RESET pin; not used by <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> circuitry. Not a GPIO</p></td>
 </tr>
 <tr class="row-even"><td><p>+3.3V</p></td>
 <td><p>P2</p></td>
@@ -513,7 +515,7 @@ available to the end user.</p>
 <tr class="row-odd"><td><p>+5V</p></td>
 <td><p>P2</p></td>
 <td><p>5</p></td>
-<td><p>Arduino +5V, D6 cathode, 250mV lower than AD-M2KCOMPEDU-EBZ +5V bus
+<td><p>Arduino +5V, D6 cathode, 250mV lower than <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> +5V bus
 if Arduino USB or power jack is not plugged in.</p></td>
 </tr>
 <tr class="row-even"><td><p>GND</p></td>
@@ -524,7 +526,7 @@ if Arduino USB or power jack is not plugged in.</p></td>
 <tr class="row-odd"><td><p>VIN</p></td>
 <td><p>P2</p></td>
 <td><p>8</p></td>
-<td><p>Arduino VIN header pin; not connected to AD-M2KCOMPEDU-EBZ circuitry.</p></td>
+<td><p>Arduino VIN header pin; not connected to <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> circuitry.</p></td>
 </tr>
 <tr class="row-even"><td><p>D1/TX</p></td>
 <td><p>P3</p></td>
@@ -572,11 +574,10 @@ if Arduino USB or power jack is not plugged in.</p></td>
 </section>
 <section id="working-in-conjunction-with-adi-adalm2000-discovery">
 <h4>Working in conjunction with ADI ADALM2000 &amp; Discovery<a class="headerlink" href="#working-in-conjunction-with-adi-adalm2000-discovery" title="Link to this heading"></a></h4>
-<p>The ADALM female connectors/headers P12 is located on the left of the AD-M2KCOMPEDU-EBZ
-for quick, non-invasive plug-in connections. A male type of connector
-(P16) is placed right next to it, in a pin-to-pin vertical mirror arrangement,
-allowing direct access to all ADALM or Discovery
-ports.</p>
+<p>The ADALM female connectors/headers P12 is located on the left of the <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a>
+for quick, non-invasive plug-in connections. A male type of connector (P16) is
+placed right next to it, in a pin-to-pin vertical mirror arrangement, allowing
+direct access to all ADALM or Discovery ports.</p>
 <div class="table-wrapper colwidths-given docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -681,7 +682,7 @@ signal source, voltage level, and direction before connecting external circuitry
 </section>
 </section>
 <section id="power-supplies-of-the-ad-m2kcompedu-ebz">
-<h3>Power supplies of the <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a><a class="headerlink" href="#power-supplies-of-the-ad-m2kcompedu-ebz" title="Link to this heading"></a></h3>
+<h3>Power supplies of the AD-M2KCOMPEDU-EBZ<a class="headerlink" href="#power-supplies-of-the-ad-m2kcompedu-ebz" title="Link to this heading"></a></h3>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> is supplied from a +5V USB source through the USB
 Type-C connector P6.</p>
 <ul>
@@ -721,7 +722,7 @@ available—check DS1 LED status!</p>
 </div>
 </div></blockquote>
 </li>
-<li><p>Over current protection (OCP) threshold is set at 900 mA. In the event of an
+<li><p>Over current protection (OCP) threshold is set at 900mA. In the event of an
 OCP, the board is auto powered OFF. Remove the Load/short-circuit from the 5V
 Supply and power OFF the board. A power ON/OFF/ON cycle is required to reset
 the OCP.</p>
@@ -731,8 +732,8 @@ the OCP.</p>
 <p>Do not short the +5V_ard with the 5V bus, as this will bypass the anti-reverse
 supply diode D6. This may cause interference between the two USB power
 suppliers: Charger/PC-Laptop (assuming that the Arduino board is connected
-to a PC/Laptop). Moreover, the 5V bus is no longer protected by the AD-M2KCOMPEDU-EBZ
-on-board OCP circuit and it will take power from 5V_ard bus.</p>
+to a PC/Laptop). Moreover, the 5V bus is no longer protected by the <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a>
+onboard OCP circuit and it will take power from 5V_ard bus.</p>
 </div>
 </div></blockquote>
 </li>
@@ -742,7 +743,7 @@ on-board OCP circuit and it will take power from 5V_ard bus.</p>
 <p>Power the <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> from a 5V USB charger, a standard phone
 charger, or a PC/laptop USB port.</p>
 <p><strong>Normal operation:</strong> <strong>Green LED D12</strong> continuously lit; Red LED D6 off</p>
-<p><strong>Current limit: LED DS2 blinking:</strong> The 500 mA current limit is reached. Remove
+<p><strong>Current limit: LED DS2 blinking:</strong> The 500mA current limit is reached. Remove
 the USB-C cable from P6 USB Type C receptacle and check the schematic on the
 breadboard in order to find a possible short circuit between power rails
 (for example 5V shorted to ground or 12V shorted to ground) or a high
@@ -757,17 +758,17 @@ TOUCH! Touching it can result in a HAZARD.</p>
 <section id="available-fixed-power-supply-outputs">
 <h3>Available Fixed Power supply outputs<a class="headerlink" href="#available-fixed-power-supply-outputs" title="Link to this heading"></a></h3>
 <p>The power consumption of <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> is limited to 4.5W from the
-5V USB supply. The current consumption is limited to 900 mA. The AD-M2KCOMPEDU-EBZ
+5V USB supply. The current consumption is limited to 900mA. The <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a>
 provides:</p>
 <ul class="simple">
 <li><p>+5V supply rail</p></li>
-<li><p>2x +3.3V from Arduino AND/OR Local LDO</p></li>
+<li><p>Two +3.3V from Arduino AND/OR Local LDO</p></li>
 <li><p>±12V symmetrical supply rails</p></li>
 </ul>
 <section id="the-5v-supply-rail">
 <h4>The 5V supply rail<a class="headerlink" href="#the-5v-supply-rail" title="Link to this heading"></a></h4>
 <p>The maximum available power at the 5V supply rail is 3.5W (5V·700mA). The
-AD-M2KCOMPEDU-EBZ quiescent current is approximately 200mA, that leaves the user
+<a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> quiescent current is approximately 200mA, that leaves the user
 with approx. 700mA available current.</p>
 <p>The 5V supply rail is accessible at the female port P5/5 and TP3.</p>
 <p>LED DS2 GREEN lit indicates the normal operation of the 5V VCC power supply.</p>
@@ -793,15 +794,15 @@ by the VBUS+ level at the USB-C.</p>
 <h4>Two options for the +3.3V supply rail<a class="headerlink" href="#two-options-for-the-3-3v-supply-rail" title="Link to this heading"></a></h4>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> provides two possible sources for the +3.3V supply
 rail. The active source is selected using the P35 selection jumper. The +3.3V
-rail can be supplied either from the Arduino board or from an on-board LDO.
+rail can be supplied either from the Arduino board or from an onboard LDO.
 The +3.3V rail selected by the P35 jumper is then used to power all the +3.3V
-auxiliary circuitry on the AD-M2KCOMPEDU-EBZ (Audio Amp, 20 MHz CLK, Programmable
+auxiliary circuitry on the <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> (Audio Amp, 20 MHz CLK, Programmable
 Waveform Generator).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>The signal generator functions only if the P35 jumper is present, connecting
 the mid-pin with one of the side pins.</strong> It is recommended to supply the signal
-generator from the on-board LDO, connect the P35 jumper to the top pin, denoted
+generator from the onboard LDO, connect the P35 jumper to the top pin, denoted
 3V3_KIT, as this provides a more stable and noise-free power supply than the
 3V3_ARD line.</p>
 </div>
@@ -835,7 +836,7 @@ generator from the on-board LDO, connect the P35 jumper to the top pin, denoted
 <section id="arduino-3-3v-rail">
 <h5>Arduino +3.3V rail<a class="headerlink" href="#arduino-3-3v-rail" title="Link to this heading"></a></h5>
 <p>The +3.3V_ARD supply rail is provided by the Arduino via port P2/4, thus it is
-available only if the Arduino is connected to the AD-M2KCOMPEDU-EBZ. This rail is regulated
+available only if the Arduino is connected to the <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a>. This rail is regulated
 by the Arduino local LDO and has a current capability of about 30mA. The Arduino
 provides overcurrent/short circuit protection, but such an event might cause the
 Arduino to shut down or reset.</p>
@@ -847,12 +848,12 @@ Arduino to shut down or reset.</p>
 </figcaption>
 </figure>
 </section>
-<section id="the-on-board-3-3v-ldo-adm7150ardz-3-3">
-<h5>The on-board 3.3V LDO (ADM7150ARDZ-3.3)<a class="headerlink" href="#the-on-board-3-3v-ldo-adm7150ardz-3-3" title="Link to this heading"></a></h5>
-<p>The AD-M2KCOMPEDU-EBZ also includes an on-board +3.3V LDO, implemented with
+<section id="the-onboard-3-3v-ldo-adm7150ardz-3-3">
+<h5>The onboard 3.3V LDO (ADM7150ARDZ-3.3)<a class="headerlink" href="#the-onboard-3-3v-ldo-adm7150ardz-3-3" title="Link to this heading"></a></h5>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> also includes an onboard +3.3V LDO, implemented with
 the ADM7150ARDZ-3.3; it has a current capability of maximum 800mA. This supply
 option allows the board to generate its own regulated +3.3V rail, independently
-of the Arduino +3.3V output. The on-board LDO that powers the +3.3V_KIT line.</p>
+of the Arduino +3.3V output. The onboard LDO that powers the +3.3V_KIT line.</p>
 <figure class="align-center" id="id22">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/3v3_local_ldo_p35_schematic.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/3v3_local_ldo_p35_schematic.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/3v3_local_ldo_p35_schematic.png" style="width: 400px;" />
 </a>
@@ -864,13 +865,13 @@ of the Arduino +3.3V output. The on-board LDO that powers the +3.3V_KIT line.</p
 </section>
 <section id="the-12v-symmetrical-supply-rails">
 <h4>The ±12V symmetrical supply rails<a class="headerlink" href="#the-12v-symmetrical-supply-rails" title="Link to this heading"></a></h4>
-<p>The ±12V Rails are generated locally/on-board by the M1 circuit (TEM 3-0522N)
+<p>The ±12V Rails are generated locally/onboard by the M1 circuit (TEM 3-0522N)
 that is a fully integrated Switched-Mode Power Supply with fixed output voltages
 at +12V and -12V with a current capability up to 125mA per rail.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The available current for these supply rails is lower than 125mA because the
-rails also supply on-board circuitry.</p>
+rails also supply onboard circuitry.</p>
 </div>
 <p>LEDs DS3 and DS4 lit GREEN indicate the “OK” status of the ±12V supply:</p>
 <ul class="simple">
@@ -896,7 +897,7 @@ pins 1 and 3, and TP5 and 6.</p>
 <h4>Ground pins<a class="headerlink" href="#ground-pins" title="Link to this heading"></a></h4>
 <p>There is a single ground plane, common for all analog and digital sections,
 also with the Arduino and ADALM/Discovery interfaces.</p>
-<p>Multiple GND pins, both male and female, are available across the AD-M2KCOMPEDU-EBZ
+<p>Multiple GND pins, both male and female, are available across the <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a>
 board. Additional test pins are also provided on the board for measurement and
 debugging purposes.</p>
 <figure class="align-center" id="id24">
@@ -1011,7 +1012,7 @@ associated jumper pins for jumper-wire connections.</p>
 the end-user: one temperature sensor and two light sensors (IR &amp; LDR)</p>
 <section id="temperature-sensor">
 <h4>Temperature sensor<a class="headerlink" href="#temperature-sensor" title="Link to this heading"></a></h4>
-<p>The AD-M2KCOMPEDU-EBZ includes a temperature sensor (<a class="icon adi reference external" href="https://www.analog.com/TMP01" target="_blank">TMP01</a>) with an analog
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> includes a temperature sensor (<a class="icon adi reference external" href="https://www.analog.com/TMP01" target="_blank">TMP01</a>) with an analog
 (VPTAT: 5mV/K) output voltage characteristic. VPTAT varies from 1.165V at
 −40°C to 1.79V at +85°C.</p>
 <p>It also provides two active-low open-drain digital status outputs:
@@ -1040,30 +1041,30 @@ pull-up resistors are recommended to be used for the status outputs.</p>
 </section>
 <section id="light-sensors-ir-tx-rx-ldr">
 <h4>Light sensors: IR TX/RX &amp; LDR<a class="headerlink" href="#light-sensors-ir-tx-rx-ldr" title="Link to this heading"></a></h4>
-<p>The AD-M2KCOMPEDU-EBZ includes one IR LED, one IR phototransistor, and one
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> includes one IR LED, one IR phototransistor, and one
 photoresistor for a wider light spectrum. The IR LED, IR phototransistor
 and photoresistor terminals are accessible through the corresponding P9 and P10
 headers.</p>
-<div class="table-wrapper colwidths-given docutils container">
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 35.0%" />
-<col style="width: 65.0%" />
-</colgroup>
+<div class="table-wrapper docutils container" id="id31">
+<table class="docutils align-default" id="id31">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Light sensors IR TX/RX and LDR</span><a class="headerlink" href="#id31" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>IR LED, Phototransistor, Photoresistor</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>PCB View  (Location and Connectors)</p></th>
+<th class="head"><p>Schematic View</p></th>
+</tr>
+</thead>
 <tbody>
-<tr class="row-odd"><td><figure class="align-center" id="id31">
-<img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_pcb.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_pcb.png" />
-<figcaption>
-<p><span class="caption-number">Figure 28 </span><span class="caption-text">Light Sensors IR TX/RX and LDR Location and Connectors: PCB View</span><a class="headerlink" href="#id31" title="Link to this image"></a></p>
-</figcaption>
-</figure>
+<tr class="row-odd"><td rowspan="2"><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_pcb.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_pcb.png" class="align-center" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_pcb.png" style="width: 300px;" />
+</a>
 </td>
-<td><figure class="align-center" id="id32">
-<img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_schematic-converted.jpg" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_schematic-converted.jpg" />
-<figcaption>
-<p><span class="caption-number">Figure 29 </span><span class="caption-text">Light sensors IR TX/RX and LDR: Schematic View</span><a class="headerlink" href="#id32" title="Link to this image"></a></p>
-</figcaption>
-</figure>
+<td><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_schematic1.jpg"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_schematic1.jpg" class="align-center" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_schematic1.jpg" style="width: 300px;" />
+</a>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_schematic2.jpeg"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_schematic2.jpeg" class="align-center" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/light_sensors_ir_ldr_schematic2.jpeg" style="height: 400px;" />
+</a>
 </td>
 </tr>
 </tbody>
@@ -1073,30 +1074,29 @@ headers.</p>
 </section>
 <section id="user-accessible-multi-turn-potentiometers">
 <h3>User-accessible multi-turn potentiometers<a class="headerlink" href="#user-accessible-multi-turn-potentiometers" title="Link to this heading"></a></h3>
-<p>The AD-M2KCOMPEDU-EBZ includes four multiturn linear potentiometers, with all
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> includes four multiturn linear potentiometers, with all
 three terminals available to the user at header P7: R103 = 2kΩ, R104 = 5kΩ,
 R105 = 10kΩ, R106 = 100kΩ.</p>
-<div class="table-wrapper colwidths-given docutils container">
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 35.0%" />
-<col style="width: 65.0%" />
-</colgroup>
+<div class="table-wrapper docutils container" id="id32">
+<table class="docutils align-default" id="id32">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">User-Accessible Multi-Turn Potentiometers</span><a class="headerlink" href="#id32" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>User Potentiometers</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>PCB View (Location and Connectors)</p></th>
+<th class="head"><p>Schematic View</p></th>
+</tr>
+</thead>
 <tbody>
-<tr class="row-odd"><td><figure class="align-center" id="id33">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_pcb.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_pcb.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_pcb.png" style="height: 300px;" />
+<tr class="row-odd"><td rowspan="2"><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_pcb.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_pcb.png" class="align-center" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_pcb.png" style="width: 300px;" />
 </a>
-<figcaption>
-<p><span class="caption-number">Figure 30 </span><span class="caption-text">User-Accessible Multi-Turn Potentiometers and Connector PCB Location</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
-</figcaption>
-</figure>
 </td>
-<td><figure class="align-center" id="id34">
-<img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_schematics-converted.jpg" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_schematics-converted.jpg" />
-<figcaption>
-<p><span class="caption-number">Figure 31 </span><span class="caption-text">User-Accessible Multi-Turn Potentiometers Schematics</span><a class="headerlink" href="#id34" title="Link to this image"></a></p>
-</figcaption>
-</figure>
+<td><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_schematics1.jpg"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_schematics1.jpg" class="align-center" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_schematics1.jpg" style="height: 400px;" />
+</a>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_schematics2.jpg"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_schematics2.jpg" class="align-center" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/user_potentiometers_schematics2.jpg" style="width: 300px;" />
+</a>
 </td>
 </tr>
 </tbody>
@@ -1126,74 +1126,48 @@ open cathode -&gt; lit= ‘0’ logic). Each will be lit when a logic “1” is
 to the input (J9 connector).</p>
 <p>The digital/binary control switches and their corresponding outputs are accessible
 on the PCB “BTNs and SWITCHES” section.</p>
-<div class="table-wrapper colwidths-given docutils container">
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 35.0%" />
-<col style="width: 65.0%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><figure class="align-center" id="id35">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/digital_binary_control_pcb.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/digital_binary_control_pcb.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/digital_binary_control_pcb.png" style="width: 300px;" />
+<figure class="align-center" id="id33">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/digital_binary_control_pcb.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/digital_binary_control_pcb.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/digital_binary_control_pcb.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 32 </span><span class="caption-text">Digital/Binary Control Location on PCB</span><a class="headerlink" href="#id35" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 28 </span><span class="caption-text">Digital/Binary Control Location on PCB</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-</td>
-<td><figure class="align-center" id="id36">
+<figure class="align-center" id="id34">
 <img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/digital_section_schematic.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/digital_section_schematic.png" />
 <figcaption>
-<p><span class="caption-number">Figure 33 </span><span class="caption-text">Circuit Schematic of the Digital Section</span><a class="headerlink" href="#id36" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 29 </span><span class="caption-text">Circuit Schematic of the Digital Section</span><a class="headerlink" href="#id34" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
 </section>
 <section id="segment-display">
 <h3>7-Segment Display<a class="headerlink" href="#segment-display" title="Link to this heading"></a></h3>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> is equipped with an SMD_LED 7-segment with decimal
 point (DP). The display uses common anodes connected to +5V and series resistors
-of 1K. The cathodes are accessible at P23 to P31 2x8 pins header (bottom row).</p>
+of 1kΩ. The cathodes are accessible at P23 to P31 2x8 pins header (bottom row).</p>
 <p>On the top row of these headers, there are direct connections to the Arduino
 digital IO, thus placing jumpers to close these headers creates a quick link
 between the cathodes and Arduino outputs.</p>
-<div class="table-wrapper colwidths-given docutils container">
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 50.0%" />
-<col style="width: 50.0%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><figure class="align-center" id="id37">
+<figure class="align-center" id="id35">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/7seg_smd_led_pcb.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/7seg_smd_led_pcb.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/7seg_smd_led_pcb.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 34 </span><span class="caption-text">7-Segment SMD-LED PCB Location and Connector Jumpers</span><a class="headerlink" href="#id37" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 30 </span><span class="caption-text">7-Segment SMD-LED PCB Location and Connector Jumpers</span><a class="headerlink" href="#id35" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-</td>
-<td><figure class="align-center" id="id38">
+<figure class="align-center" id="id36">
 <img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/7seg_display_schematics.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/7seg_display_schematics.png" />
 <figcaption>
-<p><span class="caption-number">Figure 35 </span><span class="caption-text">7-Segment Display Schematics</span><a class="headerlink" href="#id38" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 31 </span><span class="caption-text">7-Segment Display Schematics</span><a class="headerlink" href="#id36" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
 </section>
 <section id="can-transceiver">
 <h3>CAN transceiver<a class="headerlink" href="#can-transceiver" title="Link to this heading"></a></h3>
-<p>The AD-M2KCOMPEDU-EBZ contains a +5V CAN transceiver (<a class="icon adi reference external" href="https://www.analog.com/MAX33042" target="_blank">MAX33042</a>E) with
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> contains a +5V CAN transceiver (<a class="icon adi reference external" href="https://www.analog.com/MAX33042" target="_blank">MAX33042</a>E) with
 integrated protection for industrial applications. This device has extended
 ±40V fault protection for equipment where overvoltage protection is required.
-It also incorporates high ±40 kV ESD Human Body Model (HBM) protection and an
+It also incorporates high ±40kV ESD Human Body Model (HBM) protection and an
 input common-mode range (CMR) of ±25V.</p>
 <ul class="simple">
 <li><p>The data IO (RX/TX) of the transceiver are accessible via P21 and P22 3-pin
@@ -1203,19 +1177,32 @@ that are pin-to-pin linked for chained connection.</p></li>
 <li><p>The board also presents a 2x60Ω (120Ω) termination for the CAN-bus connection
 that is permanently connected.</p></li>
 </ul>
-<figure class="align-center" id="id39">
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-center" id="id37">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/can_arduino_jumpers_p21_p22_p33_p32.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/can_arduino_jumpers_p21_p22_p33_p32.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/can_arduino_jumpers_p21_p22_p33_p32.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 36 </span><span class="caption-text">CAN to Arduino Connection Jumpers P21-P22, P33-P32</span><a class="headerlink" href="#id39" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 32 </span><span class="caption-text">CAN to Arduino Connection Jumpers P21-P22, P33-P32</span><a class="headerlink" href="#id37" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id40">
+</td>
+<td><figure class="align-center" id="id38">
 <img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/can_schematics.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/can_schematics.png" />
 <figcaption>
-<p><span class="caption-number">Figure 37 </span><span class="caption-text">CAN Schematics</span><a class="headerlink" href="#id40" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 33 </span><span class="caption-text">CAN Schematics</span><a class="headerlink" href="#id38" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 <section id="signal-and-pwm-clk-generator">
@@ -1224,7 +1211,7 @@ that is permanently connected.</p></li>
 on an Arduino R4 Wi-Fi board, featuring an RA4M1 series microcontroller from Renesas,
 running on a 48MHz clock.</p>
 <p>The software displays the Sig Gen or PWM/CLK menu to set the signal parameters
-on the MIDAS display screen via on-board Rotary Encoder.</p>
+on the MIDAS display screen via onboard Rotary Encoder.</p>
 <p>Navigating in the menu is straightforward:</p>
 <ul class="simple">
 <li><p><strong>Rotate Left or Right:</strong> Change highlighted item in the menu or if an item
@@ -1232,10 +1219,10 @@ is selected: Adjust the value of the selected item</p></li>
 <li><p><strong>Press:</strong> Select an item or change selection</p></li>
 <li><p><strong>Long Press:</strong> Exit to the upper-level menu</p></li>
 </ul>
-<section id="on-board-signal-generator">
-<h3>On-board signal generator<a class="headerlink" href="#on-board-signal-generator" title="Link to this heading"></a></h3>
+<section id="onboard-signal-generator">
+<h3>Onboard signal generator<a class="headerlink" href="#onboard-signal-generator" title="Link to this heading"></a></h3>
 <p>The Sine/Triangle/Square wave signal generator is based on the <a class="icon adi reference external" href="https://www.analog.com/AD9833" target="_blank">AD9833</a>
-Programmable WaveformnGenerator with an SPI interface, using SS_AD9833 =
+Programmable Waveform Generator with an SPI interface, using SS_AD9833 =
 Arduino Pin 10, controlled by the software on the Arduino R4 board.</p>
 <p>At the <a class="icon adi reference external" href="https://www.analog.com/AD9833" target="_blank">AD9833</a> output, the C24 capacitor removes the DC component;
 afterwards the signal is sent through the R6-R39 divider, switchable by the
@@ -1243,10 +1230,10 @@ afterwards the signal is sent through the R6-R39 divider, switchable by the
 Also both the <a class="icon adi reference external" href="https://www.analog.com/ADG444" target="_blank">ADG444</a> and the <a class="icon adi reference external" href="https://www.analog.com/AD5443" target="_blank">AD5443</a> are controlled by the software
 running on the Arduino R4 board: the <a class="icon adi reference external" href="https://www.analog.com/ADG444" target="_blank">ADG444</a> with a GPIO port (Arduino Pin 6),
 while the <a class="icon adi reference external" href="https://www.analog.com/AD5443" target="_blank">AD5443</a> with the SPI interface with SS_AD5433 = Arduino Pin 8.</p>
-<figure class="align-center" id="id41">
+<figure class="align-center" id="id39">
 <img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_sig_gen_mdac_schematics.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_sig_gen_mdac_schematics.png" />
 <figcaption>
-<p><span class="caption-number">Figure 38 </span><span class="caption-text">Signal Generator Sig_Gen, Controlled Switch and MDAC Schematics</span><a class="headerlink" href="#id41" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 34 </span><span class="caption-text">Signal Generator Sig_Gen, Controlled Switch, and MDAC Schematics</span><a class="headerlink" href="#id39" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/AD5443" target="_blank">AD5443</a> is a 12-bit current output, with an R-2R configuration,
@@ -1266,7 +1253,7 @@ and the MDAC input resistance:</p>
 \[V_{REF\_SQW\_NOM} = \frac{(10k\Omega || R_{39})}{R_6 + (10k\Omega || R_{39})} \cdot 3.3V_{pp} = 540mV_{pp}\]</div>
 </div>
 <p>The output of the <a class="icon adi reference external" href="https://www.analog.com/AD5443" target="_blank">AD5443</a> DAC is converted to voltage by A6, an <a class="icon adi reference external" href="https://www.analog.com/AD8065" target="_blank">AD8065</a>
-op amp. Because the RFB feedback input also features a 10KΩ typical resistance,
+op amp. Because the RFB feedback input also features a 10kΩ typical resistance,
 the output of the op amp will be equal to VREF divided by the DAC value:</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -1280,20 +1267,20 @@ op amp. The total gain of the two stages can be calculated as:</p>
 <div class="math notranslate nohighlight">
 \[G_{Siggen} = \left(1 + \frac{R_{40}}{R_{13}}\right) \cdot \left(-\frac{R_{44}}{R_{43}}\right) = 6.9 \cdot (-5.9) = -40.71\]</div>
 </div>
-<figure class="align-center" id="id42">
+<figure class="align-center" id="id40">
 <img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_output_stage_schematics.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_output_stage_schematics.png" />
 <figcaption>
-<p><span class="caption-number">Figure 39 </span><span class="caption-text">Signal Generator Sig_Gen Output Stage Schematics</span><a class="headerlink" href="#id42" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 35 </span><span class="caption-text">Signal Generator Sig_Gen Output Stage Schematics</span><a class="headerlink" href="#id40" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Although the gain is inverting, this does not change the signal generator behavior.
 The final amplifier output of the signal generator is accessible at the “SIG GEN”
 section at P8 and TP15, noted as “OUT_SG” on the silk screen.</p>
-<figure class="align-center" id="id43">
+<figure class="align-center" id="id41">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_output_connector.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_output_connector.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_output_connector.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 40 </span><span class="caption-text">Signal Generator Sig_Gen Output Connector</span><a class="headerlink" href="#id43" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 36 </span><span class="caption-text">Signal Generator Sig_Gen Output Connector</span><a class="headerlink" href="#id41" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The maximum output amplitude of the signal generator is, for sine and triangle wave:</p>
@@ -1348,7 +1335,7 @@ output, precisely for educational purposes. In this way truncated waveforms can 
 obtained.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The AD-M2KCOMPEDU-EBZ Sig_Gen has a bandwidth limitation of 2MHz, however, setting the
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-M2KCOMPEDU-EBZ" target="_blank">AD-M2KCOMPEDU-EBZ</a> Sig_Gen has a bandwidth limitation of 2MHz, however, setting the
 frequency higher than 400kHz will result in attenuated amplitude versus
 the set amplitude. The expected Sine amplitude attenuation for a specific
 frequency can be estimated considering the frequency characteristic that
@@ -1357,8 +1344,8 @@ presents a -20dB/decade slope past the cutoff frequency of &#64;400kHz.</p>
 rates first &#64;200kHz and only later the amplitude.</p>
 </div>
 </section>
-<section id="on-board-signal-generator-s-dc-offset">
-<h3>On-board signal generator’s DC offset<a class="headerlink" href="#on-board-signal-generator-s-dc-offset" title="Link to this heading"></a></h3>
+<section id="onboard-signal-generator-s-dc-offset">
+<h3>Onboard signal generator’s DC offset<a class="headerlink" href="#onboard-signal-generator-s-dc-offset" title="Link to this heading"></a></h3>
 <p>The DC offset of the signal generator is provided by the <a class="icon adi reference external" href="https://www.analog.com/AD5625R" target="_blank">AD5625R</a> 12-bit
 quad DAC, controlled by the I2C protocol. Two of the DAC outputs are fed to
 the one op amp differential amplifier implemented by the <a class="icon adi reference external" href="https://www.analog.com/ADA4077-1" target="_blank">ADA4077-1</a>.</p>
@@ -1367,11 +1354,10 @@ the one op amp differential amplifier implemented by the <a class="icon adi refe
 <div class="math notranslate nohighlight">
 \[V_{OUT\_OFFSET\_DAC} = \frac{R_{45}}{R_{41}} \cdot (V_{VOUT\_DAC\_1} - V_{VOUT\_DAC\_2}) = 0.36 \cdot (V_{VOUT\_DAC\_1} - V_{VOUT\_DAC\_2})\]</div>
 </div>
-<figure class="align-center" id="id44">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_dc_offset_schematics.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_dc_offset_schematics.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_dc_offset_schematics.png" style="width: 800px;" />
-</a>
+<figure class="align-center" id="id42">
+<img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_dc_offset_schematics.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_dc_offset_schematics.png" />
 <figcaption>
-<p><span class="caption-number">Figure 41 </span><span class="caption-text">Signal Generator DC Offset Generation Schematics</span><a class="headerlink" href="#id44" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 37 </span><span class="caption-text">Signal Generator DC Offset Generation Schematics</span><a class="headerlink" href="#id42" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The differential amplifier’s output is connected to the noninverting input of
@@ -1381,10 +1367,10 @@ is ±5V, it follows that the maximum DC output voltage of the signal generator i
 <div class="math notranslate nohighlight">
 \[V_{OUT\_MAX\_SIG\_GEN}\bigg|_{DC} = \left(1 + \frac{R_{44}}{R_{43}}\right) \cdot V_{OUT_{OFFSET_{DAC}}} = 6.9 \cdot 0.36 \cdot (\pm 5V) = \pm 12.42V\]</div>
 </div>
-<figure class="align-center" id="id45">
+<figure class="align-center" id="id43">
 <img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_dc_offset_output_stage.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/signal_generator_dc_offset_output_stage.png" />
 <figcaption>
-<p><span class="caption-number">Figure 42 </span><span class="caption-text">Signal Generator DC Offset at the Output Stage</span><a class="headerlink" href="#id45" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 38 </span><span class="caption-text">Signal Generator DC Offset at the Output Stage</span><a class="headerlink" href="#id43" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Note that the output offset voltage is limited by software to ±10V. Also note
@@ -1414,16 +1400,16 @@ set from the generator menu.</p>
 <p>The output of the PWM generator is then buffered using two HEX inverters,
 providing the 5V-TTL clock and an inverted version of the Clock signal: CLK/PWM
 and <span class="math notranslate nohighlight">\(\overline{CLK}\)</span>/<span class="math notranslate nohighlight">\(\overline{PWM}\)</span>. The two clock signals are
-accessible at TP17 and TP21 and connector P14 pin 7 and 8—see Figure 43.</p>
+accessible at TP17 and TP21 and connector P14 pin 7 and 8.</p>
 <p>Furthermore, the CLK real-time state can be monitored with the dedicated LED
 DS5 that lights up green when PWM/CLK outputs state is logic ‘1’ up to 20Hz.
-For higher frequency (larger than about 25 Hz), the PWM output can be used to
+For higher frequency (larger than about 25Hz), the PWM output can be used to
 modulate the brightness of the DS5 LED.</p>
-<figure class="align-center" id="id46">
+<figure class="align-center" id="id44">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/clk_pwm_output_connector.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/clk_pwm_output_connector.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/clk_pwm_output_connector.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 43 </span><span class="caption-text">CLK/PWM Output Test Points and Connector Location</span><a class="headerlink" href="#id46" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 39 </span><span class="caption-text">CLK/PWM Output Test Points and Connector Location</span><a class="headerlink" href="#id44" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -1435,18 +1421,18 @@ monochrome display, 128 x 64 Pixels, accessible via I2C. This display is
 directly connected to the Arduino plugin header at P4/9,10 (SDA, SCL). Two
 pull up 10kΩ resistors (R8, R9) are placed on the board for the
 SDA and SCL I2C bus. Note that the I2C address is 0x3C.</p>
-<figure class="align-center" id="id47">
+<figure class="align-center" id="id45">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/main_oled_display_midas.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/main_oled_display_midas.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/main_oled_display_midas.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 44 </span><span class="caption-text">Main OLED Display – MIDAS</span><a class="headerlink" href="#id47" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 40 </span><span class="caption-text">Main OLED Display – MIDAS</span><a class="headerlink" href="#id45" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id48">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/main_oled_display_schematic-converted.jpg"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/main_oled_display_schematic-converted.jpg" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/main_oled_display_schematic-converted.jpg" style="width: 800px;" />
+<figure class="align-center" id="id46">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/main_oled_display_schematic.jpeg"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/main_oled_display_schematic.jpeg" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/main_oled_display_schematic.jpeg" style="width: 800px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 45 </span><span class="caption-text">Main OLED Display – Schematic Connections</span><a class="headerlink" href="#id48" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 41 </span><span class="caption-text">Main OLED Display – Schematic Connections</span><a class="headerlink" href="#id46" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -1477,18 +1463,18 @@ Triangle, and Square waveforms, while the PWM/CLK signals are 5V TTL routed on
 separated output pins. See <a class="reference internal" href="#pwm-clk-generator"><span class="std std-ref">PWM/CLK generator</span></a> section.</p>
 <p>The edited Sig_Gen parameters are updated instantaneously, no click to confirm
 is required.</p>
-<figure class="align-center" id="id49">
+<figure class="align-center" id="id47">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/sig_gen_menu.png"><img alt="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/sig_gen_menu.png" src="https://media.githubusercontent.com/media/kathlynaudrey/documentation/ad-m2compedu-ebz/docs/solutions/reference-designs/ad-m2kcompedu-ebz/hardware-guide/sig_gen_menu.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 46 </span><span class="caption-text">Sig_Gen MENU</span><a class="headerlink" href="#id49" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 42 </span><span class="caption-text">Sig_Gen MENU</span><a class="headerlink" href="#id47" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="offset-dac-as-programmable-supply-rail-audio-dsp">
 <h4>Offset DAC as Programmable Supply Rail / Audio DSP<a class="headerlink" href="#offset-dac-as-programmable-supply-rail-audio-dsp" title="Link to this heading"></a></h4>
 <p>The AD5625RBRUZ-1 DAC in conjunction with Arduino can be programmed to
-work as a custom waveform generator OR an audio DSP. The on-board signal generator
+work as a custom waveform generator OR an audio DSP. The onboard signal generator
 can be set to deliver a 0V DC level at OUT_STAGE1, thus enabling the user to
 experiment with the DAC via I2C, and routing the amplified signal to the Sig_Gen
 output that can be further routed to the audio amplifier such that the result can
