@@ -17,20 +17,20 @@ Board Features
 --------------
 
 - :adi:`ADALM2000` companion education board for hands-on mixed-signal learning and
-  prototyping.
+  prototyping
 - Extends :adi:`ADALM2000` with integrated signal generation, analog and digital
-  interfacing, sensors and user peripherals.
+  interfacing, sensors and user peripherals
 - Portable USB-powered platform that combines power supplies, adjustable
   references, signal generation, sensing, display support, and communication
-  experiments on one board.
+  experiments on one board
 - Standalone Arbitrary Waveform Generator with up to ±10V maximum amplitude.
 - Onboard ±12V power supply rails and two adjustable DC reference generators
-  covering ±12V DC.
+  covering ±12V DC
 - TTL/PWM 5V clock generator with adjustable frequency and software-controlled
-  generator interface through Arduino UNO R4.
+  generator interface through Arduino UNO R4
 - Arduino UNO R4 plug-in option for menu control, calibration, display support,
-  CAN communication and firmware experimentation.
-- Compatible with :adi:`ADALM1000` / :adi:`ADALM2000` active learning modules.
+  CAN communication, and firmware experimentation
+- Compatible with :adi:`ADALM1000` / :adi:`ADALM2000` active learning modules
 
 Hardware Setup
 --------------
@@ -811,12 +811,14 @@ input common-mode range (CMR) of ±25V.
     
            CAN Schematics
 
+.. _signal-pwm-clk-generator:
+
 Signal and PWM/CLK generator
 ----------------------------
 
 Both the Signal and PWM/CLK generators are controlled from software, implemented
 on an `Arduino R4 <https://docs.arduino.cc/resources/datasheets/ABX00087-datasheet.pdf>`_
-Wi-Fi board, featuring an RA4M1 series microcontroller from Renesas, running on a 48MHz
+WiFi board, featuring an RA4M1 series microcontroller from Renesas, running on a 48MHz
 clock.
 
 The software displays the Sig Gen or PWM/CLK menu to set the signal parameters
@@ -934,8 +936,7 @@ For square wave:
 Note that these are nominal values and depend on many factors such as the
 :adi:`AD9833`'s real output voltage, the non-zero error, the monotony of the :adi:`AD5443`
 DAC, and the resistor's tolerances. The above values are set by constants in the software
-application and can be adjusted in the calibration
-menu.
+application and can be adjusted in the calibration menu.
 
 The Sig Gen output is protected against short circuit damage by means of a 220Ω / 2W
 (R50) output series resistor that is included in the negative feedback loop. Thus, the
@@ -1065,14 +1066,12 @@ SDA and SCL I2C bus. Note that the I2C address is 0x3C.
 
 .. figure:: images/main_oled_display_midas.png
     :align: center
-    :width: 400px
     
     Main OLED Display – MIDAS
 
 
 .. figure:: images/main_oled_display_schematic.png
     :align: center
-    :width: 400px
     
     Main OLED Display – Schematic Connections
  
@@ -1080,8 +1079,8 @@ SDA and SCL I2C bus. Note that the I2C address is 0x3C.
 Menu - User Interface
 ---------------------
 
-Calibration procedure interface (Sig Gen offset and amplitude)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Calibration procedure interface (Sig Gen offset and amplitude)
+- Operating modes interface
 
 Operating modes interface:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1099,7 +1098,7 @@ The Sig Gen and PWM/CLK menu includes access to following parameters:
 
 - **Waveform type:** Off/Sine/Triangle/Square/PWM/CLK.
 - **Peak to peak amplitude:** In the range of [100mV to 20V], 100mV steps.
-- **Frequency:** In the range of [10Hz to 2 MHz] ([1Hz to 2MHz] for PWM).
+- **Frequency:** In the range of [10Hz to 2MHz] ([1Hz to 2MHz] for PWM).
 - **DC offset:** In the range of [-10V +10V], 100mV steps.
 - **PWM/CLK duty cycle:** In the range of [1% to 99%]
 
@@ -1110,11 +1109,19 @@ separated output pins. See :ref:`pwm-clk-generator` section.
 The edited Sig_Gen parameters are updated instantaneously, no click to confirm
 is required.
 
-.. figure:: images/sig_gen_menu.png
-   :align: center
-   :width: 450px
+.. list-table::
+    :widths: 50 50
 
-   Sig_Gen MENU
+    * - .. figure:: images/sig_gen_menu.png
+           :align: center
+
+           Signal Gen Menu
+
+      - .. figure:: images/pwm_gen_menu.png
+           :align: center
+
+           PWM Gen Menu
+
 
 Offset DAC as Programmable Supply Rail / Audio DSP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -26,7 +26,7 @@ Features
 - 2x selectable +3.3V supply sources: Arduino +3.3V rail or onboard local LDO
 - 2x DC reference voltage generators VREF adjustable in a range of ±12V, buffered,
   and 22mA output current limited
-- 1x DC reference current generators IREF adjustable in a range of 360 µA up to
+- 1x DC reference current generators IREF adjustable in a range of 360µA up to
   60mA sourced from a 12V supply rail
 - Audio amplifier path for signal-conditioning and audio experiments
 - Onboard temperature and optical sensing, user potentiometers, switches, buttons, LEDs,
@@ -61,7 +61,7 @@ Applications
 System Architecture
 -------------------
 
-.. figure:: images/Block-Diagram-Converted.png
+.. figure:: images/Block-Diagram-Converted.jpg
   :align: center
   :width: 800px
 
@@ -101,7 +101,7 @@ Software
 
 .. admonition:: Download
 
-   - Arduino firmware / calibration code
+   - Arduino firmware / Calibration code - Link to follow
 
 Design and Integration Files
 ----------------------------
@@ -117,12 +117,13 @@ Design and Integration Files
     - Allegro Project File 
 
 
-User Guide
-----------
+User Guides
+-----------
 
 .. toctree::
-   :caption: The following user guide is available:
+   :caption: The following user guides are available:
    :titlesonly:
    :glob:
 
    hardware-guide/index
+   software-guide/index
